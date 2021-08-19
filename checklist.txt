@@ -2,32 +2,35 @@
 [X] create database
 [ ] COMPONENTS
     [ ] feeling?
+        [X] component
         [ ] ROUTE
         [ ] heading
         [ ] number input (DISPATCH)
         [ ] button (ROUTE to next page)
     [ ] understanding?
+        [X] component
         [ ] ROUTE
-        [ ] feeling?
         [ ] heading
         [ ] number input (DISPATCH)
         [ ] button (ROUTE to next page)
     [ ] supported?
+        [X] component
         [ ] ROUTE
-        [ ] feeling?
         [ ] heading
         [ ] number input (DISPATCH)
         [ ] button (ROUTE to next page)
     [ ] comments
+        [X] component
         [ ] ROUTE
-        [ ] feeling?
         [ ] heading
         [ ] text input (DISPATCH)
         [ ] button (ROUTE to next page)
     [ ] review 
+        [X] component
         [ ] SELECTOR
             [ ] render feedback (GET)
         [ ] submit button (POST)
         [ ] Success page (ROUTE)
+            [X] component
             [ ] restart button
 [ ] VALIDATION
