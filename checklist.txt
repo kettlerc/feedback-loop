@@ -3,7 +3,7 @@
 [ ] COMPONENTS
     [ ] feeling?
         [X] component
-        [ ] ROUTE
+        [X] ROUTE
         [ ] heading
         [ ] number input (DISPATCH)
         [ ] button (ROUTE to next page)
