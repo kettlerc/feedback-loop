@@ -8,6 +8,10 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 const totalFeedback = (state = [], action) => {
+    if (action.type === 'ADD_FEELING_SCORE') {
+        console.log('payload is:', action.payload);
+        return [...state, action.payload];
+    }
     return state;
 }
 
