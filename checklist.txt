@@ -1,5 +1,5 @@
 [X] npm install/redux/etc
-[ ] create database
+[X] create database
 [ ] COMPONENTS
     [ ] feeling?
         [ ] ROUTE
