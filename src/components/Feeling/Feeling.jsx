@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Feeling() {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function Feeling() {
                     <button
                         onClick={() => dispatch({
                             type: 'ADD_FEELING_SCORE',
-                            payload: {feelingScore}
+                            payload: feelingScore
                         })}
                     >Next
                     </button>

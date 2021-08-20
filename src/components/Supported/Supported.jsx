@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Supported() {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function Supported() {
                     <button
                         onClick={() => dispatch({
                             type: 'ADD_SUPPORTED_SCORE',
-                            payload: {supportedScore}
+                            payload: supportedScore
                         })}
                     >Next
                     </button>

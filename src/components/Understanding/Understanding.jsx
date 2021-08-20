@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Understanding() {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function Understanding() {
                     <button
                         onClick={() => dispatch({
                             type: 'ADD_UNDERSTANDING_SCORE',
-                            payload: {understandingScore}
+                            payload: understandingScore
                         })}
                     >Next
                     </button>

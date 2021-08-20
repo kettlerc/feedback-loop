@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Comments() {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function Comments() {
                     <button
                         onClick={() => dispatch({
                             type: 'ADD_COMMENTS',
-                            payload: {comments}
+                            payload: comments
                         })}
                     >Next
                     </button>
