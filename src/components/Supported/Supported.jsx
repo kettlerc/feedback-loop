@@ -1,10 +1,19 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Supported() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [supportedScore, setSupportedScore] = useState('');
+
+    const onButtonClick = () => {
+        dispatch({
+            type: 'ADD_SUPPORTED_SCORE',
+            payload: supportedScore
+        });
+        history.push('/comments');
+    }
 
     return (
         <>
@@ -15,15 +24,10 @@ function Supported() {
                     onChange={(event) => setSupportedScore(event.target.value)}
                     value={supportedScore}
                 />
-                <Link to={"/comments"}>
-                    <button
-                        onClick={() => dispatch({
-                            type: 'ADD_SUPPORTED_SCORE',
-                            payload: supportedScore
-                        })}
-                    >Next
-                    </button>
-                </Link>
+                <button
+                    onClick={onButtonClick}
+                >Next
+                </button>
             </div>
         </>
     )

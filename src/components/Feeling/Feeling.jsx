@@ -1,10 +1,19 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Feeling() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [feelingScore, setFeelingScore] = useState('');
+
+    const onButtonClick = () => {
+        dispatch({
+            type: 'ADD_FEELING_SCORE',
+            payload: feelingScore
+        });
+        history.push('/understanding');
+    }
 
     return (
         <>
@@ -15,15 +24,10 @@ function Feeling() {
                     onChange={(event) => setFeelingScore(event.target.value)}
                     value={feelingScore}
                 />
-                <Link to={"/understanding"}>
-                    <button
-                        onClick={() => dispatch({
-                            type: 'ADD_FEELING_SCORE',
-                            payload: feelingScore
-                        })}
-                    >Next
-                    </button>
-                </Link>
+                <button
+                    onClick={onButtonClick}
+                >Next
+                </button>
             </div>
         </>
     )

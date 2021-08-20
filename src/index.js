@@ -20,6 +20,9 @@ const totalFeedback = (state = [], action) => {
     if (action.type === 'ADD_COMMENTS') {
         return [...state, action.payload];
     }
+    if (action.type === 'RESET_FEEDBACK'){
+        return [];
+    }
     return state;
 }
 
