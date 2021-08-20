@@ -9,7 +9,15 @@ import logger from 'redux-logger';
 
 const totalFeedback = (state = [], action) => {
     if (action.type === 'ADD_FEELING_SCORE') {
-        console.log('payload is:', action.payload);
+        return [...state, action.payload];
+    }
+    if (action.type === 'ADD_UNDERSTANDING_SCORE') {
+        return [...state, action.payload];
+    }
+    if (action.type === 'ADD_SUPPORTED_SCORE') {
+        return [...state, action.payload];
+    }
+    if (action.type === 'ADD_COMMENTS') {
         return [...state, action.payload];
     }
     return state;

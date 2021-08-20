@@ -1,8 +1,5 @@
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import Understanding from '../Understanding/Understanding';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-
 
 function Feeling() {
     const dispatch = useDispatch();
@@ -10,7 +7,6 @@ function Feeling() {
 
     return (
         <>
-        <Router>
             <h2>How are you feeling today?</h2>
             <div>
                 <input 
@@ -18,20 +14,16 @@ function Feeling() {
                     onChange={(event) => setFeelingScore(event.target.value)}
                     value={feelingScore}
                 />
-                <button
-                    onClick={() => dispatch({
-                        type: 'ADD_FEELING_SCORE',
-                        payload: feelingScore 
-                    })}
-                >
-                    <Link to="/understanding">Next</Link>
-                </button>
+                <Link to={"/understanding"}>
+                    <button
+                        onClick={() => dispatch({
+                            type: 'ADD_FEELING_SCORE',
+                            payload: {feelingScore}
+                        })}
+                    >Next
+                    </button>
+                </Link>
             </div>
-
-            <Route path="/understanding" exact>
-                <Understanding />
-            </Route>
-        </Router>
         </>
     )
 }
