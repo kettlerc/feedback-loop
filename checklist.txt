@@ -1,34 +1,34 @@
 [X] npm install/redux/etc
 [X] create database
 [ ] COMPONENTS
-    [ ] feeling?
+    [X] feeling?
         [X] component
         [X] ROUTE
-        [ ] heading
-        [ ] number input (DISPATCH)
-        [ ] button (ROUTE to next page)
-    [ ] understanding?
+        [X] heading
+        [X] number input (DISPATCH)
+        [X] button (ROUTE to next page)
+    [X] understanding?
         [X] component
-        [ ] ROUTE
-        [ ] heading
-        [ ] number input (DISPATCH)
-        [ ] button (ROUTE to next page)
-    [ ] supported?
+        [X] ROUTE
+        [X] heading
+        [X] number input (DISPATCH)
+        [X] button (ROUTE to next page)
+    [X] supported?
         [X] component
-        [ ] ROUTE
-        [ ] heading
-        [ ] number input (DISPATCH)
-        [ ] button (ROUTE to next page)
-    [ ] comments
+        [X] ROUTE
+        [X] heading
+        [X] number input (DISPATCH)
+        [X] button (ROUTE to next page)
+    [X] comments
         [X] component
-        [ ] ROUTE
-        [ ] heading
-        [ ] text input (DISPATCH)
-        [ ] button (ROUTE to next page)
+        [X] ROUTE
+        [X] heading
+        [X] text input (DISPATCH)
+        [X] button (ROUTE to next page)
     [ ] review 
         [X] component
-        [ ] SELECTOR
-            [ ] render feedback (GET)
+        [X] SELECTOR
+            [X] render feedback (GET)
         [ ] submit button (POST)
         [ ] Success page (ROUTE)
             [X] component
