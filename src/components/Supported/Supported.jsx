@@ -8,11 +8,21 @@ function Supported() {
     const [supportedScore, setSupportedScore] = useState('');
 
     const onButtonClick = () => {
+        if (supportedScore === ''){
+            alert('Please input a score!')
+        } else if (supportedScore < 0) {
+            alert('Please enter a number 1-5')
+            setSupportedScore(0);
+        } else if (supportedScore > 5) {
+            alert('Please enter a number 1-5')
+            setSupportedScore(5);
+        } else {
         dispatch({
             type: 'ADD_SUPPORTED_SCORE',
             payload: supportedScore
         });
         history.push('/comments');
+        }
     }
 
     return (

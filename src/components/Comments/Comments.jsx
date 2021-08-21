@@ -8,11 +8,15 @@ function Comments() {
     const [comments, setComments] = useState('');
 
     const onButtonClick = () => {
+        if (comments === ''){
+            alert('Please provide a brief comment!')
+        } else {
         dispatch({
             type: 'ADD_COMMENTS',
             payload: comments
         });
         history.push('/review');
+        }
     }
 
     return (
