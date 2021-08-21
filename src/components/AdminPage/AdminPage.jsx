@@ -15,7 +15,8 @@ import FlagIcon from '@material-ui/icons/Flag';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    maxWidth: 1250,
+    margin: 100
   },
 });
 

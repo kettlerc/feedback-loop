@@ -7,6 +7,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import MoodIcon from '@material-ui/icons/Mood';
+import MoodBadIcon from '@material-ui/icons/MoodBad';
 
 function Feeling() {
     const dispatch = useDispatch();
@@ -25,18 +27,20 @@ function Feeling() {
         }
     }
 
-
     return (
         <>
             <h2>How are you feeling today?</h2>
 
             <FormControl component="fieldset">
                     <RadioGroup row value={feelingScore} onChange={(event) => setFeelingScore(event.target.value)}>
+                        <MoodIcon fontSize="large"/>
                         <FormControlLabel value="0" control={<Radio />} label="0" />
                         <FormControlLabel value="1" control={<Radio />} label="1" />
+                        <FormControlLabel value="2" control={<Radio />} label="2" />
                         <FormControlLabel value="3" control={<Radio />} label="3" />
                         <FormControlLabel value="4" control={<Radio />} label="4" />
                         <FormControlLabel value="5" control={<Radio />} label="5" />
+                        <MoodBadIcon fontSize="large"/>
                     </RadioGroup>
             </FormControl>
 

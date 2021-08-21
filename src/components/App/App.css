@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: #fff;
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -20,4 +20,8 @@
 
 h4 {
   font-style: italic;
+}
+
+img {
+  max-height: 300px;
 }

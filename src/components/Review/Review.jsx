@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 function Review() {
     const history = useHistory();
@@ -36,12 +38,16 @@ function Review() {
 
     return (
         <>
-        <h3>Here is your feedback</h3>
+        <h2>Here is your feedback</h2>
         <h3>Feelings: {feedback[0]}</h3>
         <h3>Understanding: {feedback[1]}</h3>
         <h3>Support: {feedback[2]}</h3>
         <h3>Comments: {feedback[3]}</h3>
-        <button onClick={submitFeedback}>Submit Feedback</button>
+        <Button 
+            onClick={submitFeedback}
+            variant="contained"
+            color="primary"
+        >Submit Feedback<NavigateNextIcon /></Button>
         </>
     )
 }

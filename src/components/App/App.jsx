@@ -16,8 +16,7 @@ function App() {
     <div className='App'>
       <Router>
         <header className='App-header'>
-          <h1 className='App-title'>Feedback!</h1>
-          <h4>Don't forget it!</h4>
+          <img src="https://larryferlazzo.edublogs.org/files/2020/03/feedback_1583238216.png" alt="" />
         </header>
         <Route path="/" exact>
           <Feeling 

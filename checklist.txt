@@ -38,15 +38,15 @@
 STRETCH
 [ ] go back and change scores
 [ ] MaterialUI
-    [ ] theme
+    [X] theme
     [X] radio buttons
     [X] input form
     [X] buttons
     [X] icons
-    [ ] snackbars
-[ ] admin section
-    [ ] GET request
-    [ ] .map over table
+    [ ] spacing
+[X] admin section
+    [X] GET request
+    [X] .map over table
     [ ] DELETE
         [ ] button
         [ ] axios request
