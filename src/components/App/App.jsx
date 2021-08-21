@@ -7,6 +7,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import FeedbackSubmitted from '../FeedbackSubmitted/FeedbackSubmitted';
+import AdminPage from '../AdminPage/AdminPage';
 
 
 function App() {
@@ -44,6 +45,10 @@ function App() {
 
         <Route path="/feedbacksubmitted">
           <FeedbackSubmitted />
+        </Route>
+
+        <Route path="/adminpage">
+          <AdminPage />
         </Route>
       </Router>
     </div>

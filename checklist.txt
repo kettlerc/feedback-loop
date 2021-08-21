@@ -25,7 +25,7 @@
         [X] heading
         [X] text input (DISPATCH)
         [X] button (ROUTE to next page)
-    [ ] review 
+    [X] review 
         [X] component
         [X] SELECTOR
             [X] render feedback (GET)
@@ -34,3 +34,24 @@
             [X] component
             [X] restart button
 [X] VALIDATION
+
+STRETCH
+[ ] go back and change scores
+[ ] MaterialUI
+    [ ] theme
+    [ ] stepper
+    [ ] radio buttons
+    [ ] input form
+    [ ] buttons
+    [ ] card
+    [ ] icons
+    [ ] snackbars
+[ ] admin section
+    [ ] GET request
+    [ ] .map over table
+    [ ] DELETE
+        [ ] button
+        [ ] axios request
+    [ ] Flag entry
+        [ ] conditional rendering/boolean
+[ ] deploy to heroku

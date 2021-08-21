@@ -9,7 +9,7 @@ function Review() {
 
     const submitFeedback = () => {
         if (feedback.length > 4){
-            alert('Something went wrong, please start again and make sure not to use your browser back buttons')
+            alert('Something went wrong, please start again and make sure not to use your browser back button')
             dispatch({
             type: 'RESET_FEEDBACK',
         });
