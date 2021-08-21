@@ -19,19 +19,23 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
         <Route path="/" exact>
-          <Feeling />
+          <Feeling 
+          />
         </Route>
 
         <Route path="/understanding">
-          <Understanding />
+          <Understanding
+          />
         </Route>
 
         <Route path="/supported">
-          <Supported />
+          <Supported 
+          />
         </Route>
 
         <Route path="/comments">
-          <Comments />
+          <Comments 
+          />
         </Route>
 
         <Route path="/review">

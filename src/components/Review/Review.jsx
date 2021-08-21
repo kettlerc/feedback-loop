@@ -1,12 +1,20 @@
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'
 
 function Review() {
     const history = useHistory();
+    const dispatch = useDispatch();
     const feedback = useSelector(store => store.totalFeedback)
 
     const submitFeedback = () => {
+        if (feedback.length > 4){
+            alert('Something went wrong, please start again and make sure not to use your browser back buttons')
+            dispatch({
+            type: 'RESET_FEEDBACK',
+        });
+        history.push("/")
+        } else {
         axios({
             method: 'POST',
             url: '/feedback',
@@ -23,6 +31,7 @@ function Review() {
             console.log('POST error', error);
         });
         history.push('/feedbacksubmitted');
+        }
     }
 
     return (
