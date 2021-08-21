@@ -1,6 +1,6 @@
 [X] npm install/redux/etc
 [X] create database
-[ ] COMPONENTS
+[X] COMPONENTS
     [X] feeling?
         [X] component
         [X] ROUTE
@@ -29,8 +29,8 @@
         [X] component
         [X] SELECTOR
             [X] render feedback (GET)
-        [ ] submit button (POST)
-        [ ] Success page (ROUTE)
+        [X] submit button (POST)
+        [X] Success page (ROUTE)
             [X] component
-            [ ] restart button
-[ ] VALIDATION
+            [X] restart button
+[X] VALIDATION

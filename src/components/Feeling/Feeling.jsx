@@ -5,21 +5,21 @@ import { useHistory } from 'react-router-dom';
 function Feeling() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [feeling, setFeeling] = useState('');
+    const [feelingScore, setFeelingScore] = useState('');
 
     const onButtonClick = () => {
-        if (feeling === ''){
+        if (feelingScore === ''){
             alert('Please input a score!')
-        } else if (feeling < 0) {
+        } else if (feelingScore < 0) {
             alert('Please enter a number 1-5')
-            setFeeling(0);
-        } else if (feeling > 5) {
+            setFeelingScore(0);
+        } else if (feelingScore > 5) {
             alert('Please enter a number 1-5')
-            setFeeling(5);
+            setFeelingScore(5);
         } else {
         dispatch({
             type: 'ADD_FEELING_SCORE',
-            payload: feeling
+            payload: feelingScore
         });
         history.push('/understanding');
         }
@@ -31,8 +31,8 @@ function Feeling() {
             <div>
                 <input 
                     type="number"
-                    value={feeling}
-                    onChange={(event) => setFeeling(event.target.value)}
+                    value={feelingScore}
+                    onChange={(event) => setFeelingScore(event.target.value)}
                 />
                 <button
                     onClick={onButtonClick}
