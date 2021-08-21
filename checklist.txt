@@ -39,12 +39,10 @@ STRETCH
 [ ] go back and change scores
 [ ] MaterialUI
     [ ] theme
-    [ ] stepper
-    [ ] radio buttons
-    [ ] input form
-    [ ] buttons
-    [ ] card
-    [ ] icons
+    [X] radio buttons
+    [X] input form
+    [X] buttons
+    [X] icons
     [ ] snackbars
 [ ] admin section
     [ ] GET request

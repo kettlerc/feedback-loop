@@ -1,5 +1,23 @@
 import axios from "axios";
 import { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import FlagIcon from '@material-ui/icons/Flag';
+
+
+const useStyles = makeStyles({
+  table: {
+    minWidth: 650,
+  },
+});
 
 function AdminPage() {
     let [feedbackList, setFeedbackList] = useState([]);
@@ -20,24 +38,47 @@ function AdminPage() {
         });
     }
 
+    const classes = useStyles();
+
     return (
         <>
         <h1>Admin Page - Feedback Results</h1>
-        <table>
-            <thead>
-                <tr>
-                    <td>Feeling</td>
-                    <td>Understanding</td>
-                    <td>Support</td>
-                    <td>Comments</td>
-                    <td>Flag</td>
-                    <td>Delete</td>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
+        <TableContainer component={Paper}>
+            <Table className={classes.table}>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Feeling</TableCell>
+                        <TableCell>Understanding</TableCell>
+                        <TableCell>Support</TableCell>
+                        <TableCell>Comments</TableCell>
+                        <TableCell>Flag</TableCell>
+                        <TableCell>Delete</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                {feedbackList.map((feedback) => (
+                    <TableRow key={feedback.id}>
+                        <TableCell>{feedback.feeling}</TableCell>
+                        <TableCell>{feedback.understanding}</TableCell>
+                        <TableCell>{feedback.support}</TableCell>
+                        <TableCell>{feedback.comments}</TableCell>
+                        <TableCell>
+                            <Button 
+                                variant="contained"
+                                color="default"
+                            ><FlagIcon /></Button>
+                        </TableCell>
+                        <TableCell>
+                            <Button 
+                                variant="contained"
+                                color="secondary"
+                            ><DeleteForeverIcon /></Button>
+                        </TableCell>
+                    </TableRow>
+                ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
         </>
     )
 }

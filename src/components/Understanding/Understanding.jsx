@@ -1,6 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Button from '@material-ui/core/Button';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 function Understanding() {
     const dispatch = useDispatch();
@@ -10,12 +16,6 @@ function Understanding() {
     const onButtonClick = () => {
         if (understandingScore === ''){
             alert('Please input a score!')
-        } else if (understandingScore < 0) {
-            alert('Please enter a number 1-5')
-            setUnderstandingScore(0);
-        } else if (understandingScore > 5) {
-            alert('Please enter a number 1-5')
-            setUnderstandingScore(5);
         } else {
         dispatch({
             type: 'ADD_UNDERSTANDING_SCORE',
@@ -28,16 +28,23 @@ function Understanding() {
     return (
         <>
             <h2>How well are you understanding the content??</h2>
+            <FormControl component="fieldset">
+                    <RadioGroup row value={understandingScore} onChange={(event) => setUnderstandingScore(event.target.value)}>
+                        <FormControlLabel value="0" control={<Radio />} label="0" />
+                        <FormControlLabel value="1" control={<Radio />} label="1" />
+                        <FormControlLabel value="3" control={<Radio />} label="3" />
+                        <FormControlLabel value="4" control={<Radio />} label="4" />
+                        <FormControlLabel value="5" control={<Radio />} label="5" />
+                    </RadioGroup>
+            </FormControl>
+
             <div>
-                <input 
-                    type="number"
-                    onChange={(event) => setUnderstandingScore(event.target.value)}
-                    value={understandingScore}
-                />
-                <button
+                <Button
+                    variant="contained"
+                    color="primary"
                     onClick={onButtonClick}
-                >Next
-                </button>
+                >Next<NavigateNextIcon />
+                </Button>
             </div>
         </>
     )

@@ -1,6 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import TextField from '@material-ui/core/TextField';
+
 
 function Comments() {
     const dispatch = useDispatch();
@@ -19,15 +23,21 @@ function Comments() {
         <>
             <h2>Any comments you want to leave?</h2>
             <div>
-                <input
-                    type="text"
+                <TextField 
                     onChange={(event) => setComments(event.target.value)}
                     value={comments}
+                    label="Comments" 
+                    variant="outlined" 
                 />
-                <button
-                    onClick={onButtonClick}
-                >Next
-                </button>
+
+                <div>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={onButtonClick}
+                    >Next<NavigateNextIcon />
+                    </Button>
+                </div>
             </div>
         </>
     )
