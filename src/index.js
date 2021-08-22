@@ -23,6 +23,9 @@ const totalFeedback = (state = [], action) => {
     if (action.type === 'RESET_FEEDBACK'){
         return [];
     }
+    if (action.type === 'GO_BACK'){
+        return state.splice(0, state.length-1);
+    }
     return state;
 }
 

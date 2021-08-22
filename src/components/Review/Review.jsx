@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 
 function Review() {
     const history = useHistory();
@@ -10,8 +11,8 @@ function Review() {
     const feedback = useSelector(store => store.totalFeedback)
 
     const submitFeedback = () => {
-        if (feedback.length > 4){
-            alert('Something went wrong, please start again and make sure not to use your browser back button')
+        if (feedback.length !== 4){
+            alert('Sorry! Something went wrong, please start again')
             dispatch({
             type: 'RESET_FEEDBACK',
         });
@@ -36,6 +37,13 @@ function Review() {
         }
     }
 
+    const onPrevFromReview = () => {
+        dispatch({
+            type: 'GO_BACK'
+        });
+        history.push('/comments')
+    }
+
     return (
         <>
         <h2>Here is your feedback</h2>
@@ -43,6 +51,12 @@ function Review() {
         <h3>Understanding: {feedback[1]}</h3>
         <h3>Support: {feedback[2]}</h3>
         <h3>Comments: {feedback[3]}</h3>
+        <Button
+            variant="contained"
+            color="primary"
+            onClick={onPrevFromReview}
+        ><NavigateBeforeIcon />Prev
+        </Button>
         <Button 
             onClick={submitFeedback}
             variant="contained"

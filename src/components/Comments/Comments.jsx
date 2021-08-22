@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import TextField from '@material-ui/core/TextField';
 
 
@@ -11,12 +12,19 @@ function Comments() {
     const history = useHistory();
     const [comments, setComments] = useState('');
 
-    const onButtonClick = () => {
+    const onNextButtonClick = () => {
         dispatch({
             type: 'ADD_COMMENTS',
             payload: comments
         });
         history.push('/review');
+    }
+
+    const onPrevButtonClick = () => {
+        dispatch({
+            type: 'GO_BACK'
+        });
+        history.push('/supported')
     }
 
     return (
@@ -34,7 +42,13 @@ function Comments() {
                     <Button
                         variant="contained"
                         color="primary"
-                        onClick={onButtonClick}
+                        onClick={onPrevButtonClick}
+                    ><NavigateBeforeIcon />Prev
+                    </Button>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={onNextButtonClick}
                     >Next<NavigateNextIcon />
                     </Button>
                 </div>

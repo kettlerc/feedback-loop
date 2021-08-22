@@ -7,6 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import MoodIcon from '@material-ui/icons/Mood';
 import MoodBadIcon from '@material-ui/icons/MoodBad';
 
@@ -15,7 +16,7 @@ function Supported() {
     const history = useHistory();
     const [supportedScore, setSupportedScore] = useState('');
 
-    const onButtonClick = () => {
+    const onNextButtonClick = () => {
         if (supportedScore === ''){
             alert('Please input a score!')
         } else {
@@ -25,6 +26,13 @@ function Supported() {
         });
         history.push('/comments');
         }
+    }
+
+    const onPrevButtonClick = () => {
+        dispatch({
+            type: 'GO_BACK'
+        });
+        history.push('/understanding')
     }
 
     return (
@@ -47,7 +55,13 @@ function Supported() {
                 <Button
                     variant="contained"
                     color="primary"
-                    onClick={onButtonClick}
+                    onClick={onPrevButtonClick}
+                ><NavigateBeforeIcon />Prev
+                </Button>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={onNextButtonClick}
                 >Next<NavigateNextIcon />
                 </Button>
             </div>
