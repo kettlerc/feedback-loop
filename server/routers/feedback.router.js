@@ -37,5 +37,18 @@ router.post('/', (req, res) => {
         });
 });
 
+router.delete('/', (reg, res) => {
+    let sqlQuery=`
+    
+    `;
+    pool.query(sqlQuery)
+        .then((result) => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('DELETE error', error);
+            res.sendStatus(500);
+        });
+});
+
 
 module.exports = router;

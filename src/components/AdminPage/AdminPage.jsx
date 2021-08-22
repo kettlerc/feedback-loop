@@ -11,6 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import FlagIcon from '@material-ui/icons/Flag';
+import Typography from '@material-ui/core/Typography';
 
 
 const useStyles = makeStyles({
@@ -39,11 +40,22 @@ function AdminPage() {
         });
     }
 
+    const deleteEntry = () => {
+        axios({
+            method: 'DELETE',
+            url: '/feedback'
+        }).then((response) => {
+
+        }).catch((error) => {
+            console.log('DELETE error', error);
+        });
+    }
+
     const classes = useStyles();
 
     return (
         <>
-        <h1>Admin Page - Feedback Results</h1>
+        <Typography variant="h2">Admin Page - Feedback Results</Typography>
         <TableContainer component={Paper}>
             <Table className={classes.table}>
                 <TableHead>
