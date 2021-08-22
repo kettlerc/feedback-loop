@@ -11,11 +11,26 @@ import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import MoodIcon from '@material-ui/icons/Mood';
 import MoodBadIcon from '@material-ui/icons/MoodBad';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  button: {
+    margin: 50
+  },
+  radios: {
+      marginTop: 50,
+  },
+  icons: {
+    marginLeft: 30,
+    marginRight: 30
+  }
+});
 
 function Understanding() {
     const dispatch = useDispatch();
     const history = useHistory();
     const [understandingScore, setUnderstandingScore] = useState('');
+    const classes = useStyles();
 
     const onNextButtonClick = () => {
         if (understandingScore === ''){
@@ -40,33 +55,34 @@ function Understanding() {
         <>
             <Typography variant="h4">How well are you understanding the content??</Typography>
             <FormControl component="fieldset">
-                    <RadioGroup row value={understandingScore} onChange={(event) => setUnderstandingScore(event.target.value)}>
-                        <MoodIcon fontSize="large"/>
-                        <FormControlLabel value="0" control={<Radio />} label="0" />
+                    <RadioGroup row className={classes.radios} value={understandingScore} onChange={(event) => setUnderstandingScore(event.target.value)}>
+                        <MoodBadIcon className={classes.icons} fontSize="large"/>
                         <FormControlLabel value="1" control={<Radio />} label="1" />
                         <FormControlLabel value="2" control={<Radio />} label="2" />
                         <FormControlLabel value="3" control={<Radio />} label="3" />
                         <FormControlLabel value="4" control={<Radio />} label="4" />
                         <FormControlLabel value="5" control={<Radio />} label="5" />
-                        <MoodBadIcon fontSize="large"/>
+                        <MoodIcon className={classes.icons} fontSize="large"/>
                     </RadioGroup>
             </FormControl>
 
             <div>
                 <Button
+                    className={classes.button}
                     variant="contained"
                     color="primary"
                     size="large"
+                    startIcon={<NavigateBeforeIcon />}
                     onClick={onPrevButtonClick}
-                ><NavigateBeforeIcon />Prev
-                </Button>
+                >Prev</Button>
                 <Button
+                    className={classes.button}
                     variant="contained"
                     color="primary"
                     size="large"
+                    endIcon={<NavigateNextIcon />}
                     onClick={onNextButtonClick}
-                >Next<NavigateNextIcon />
-                </Button>
+                >Next</Button>
             </div>
         </>
     )

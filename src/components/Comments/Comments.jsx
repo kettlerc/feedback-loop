@@ -6,11 +6,23 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  button: {
+    margin: 50
+  },
+  text: {
+      marginTop: 50,
+      width: 500
+  }
+});
 
 function Comments() {
     const dispatch = useDispatch();
     const history = useHistory();
     const [comments, setComments] = useState('');
+    const classes = useStyles();
 
     const onNextButtonClick = () => {
         dispatch({
@@ -32,6 +44,7 @@ function Comments() {
             <Typography variant="h4">Any comments you want to leave?</Typography>
             <div>
                 <TextField 
+                    className={classes.text}
                     onChange={(event) => setComments(event.target.value)}
                     value={comments}
                     label="Comments" 
@@ -40,19 +53,21 @@ function Comments() {
 
                 <div>
                     <Button
+                        className={classes.button}
                         variant="contained"
                         color="primary"
                         size="large"
+                        startIcon={<NavigateBeforeIcon />}
                         onClick={onPrevButtonClick}
-                    ><NavigateBeforeIcon />Prev
-                    </Button>
+                    >Prev</Button>
                     <Button
+                        className={classes.button}
                         variant="contained"
                         color="primary"
                         size="large"
+                        endIcon={<NavigateNextIcon />}
                         onClick={onNextButtonClick}
-                    >Next<NavigateNextIcon />
-                    </Button>
+                    >Next</Button>
                 </div>
             </div>
         </>

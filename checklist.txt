@@ -52,5 +52,6 @@ STRETCH
         [X] button
         [ ] axios request
     [ ] Flag entry
-        [ ] conditional rendering/boolean
+        [X] conditional rendering/boolean
+        [ ] individual button (NOT ALL OF THEM)
 [ ] deploy to heroku
