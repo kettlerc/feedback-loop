@@ -38,7 +38,7 @@
 STRETCH
 [X] go back and change scores
 [ ] MaterialUI
-    [ ] typography
+    [X] typography
     [X] theme
     [X] radio buttons
     [X] input form
@@ -49,7 +49,7 @@ STRETCH
     [X] GET request
     [X] .map over table
     [ ] DELETE
-        [ ] button
+        [X] button
         [ ] axios request
     [ ] Flag entry
         [ ] conditional rendering/boolean

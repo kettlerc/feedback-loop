@@ -40,12 +40,12 @@ function AdminPage() {
         });
     }
 
-    const deleteEntry = () => {
+    const deleteEntry = (id) => {
         axios({
             method: 'DELETE',
-            url: '/feedback'
+            url: `/feedback/${id}`
         }).then((response) => {
-
+            console.log('DELETEd entry');
         }).catch((error) => {
             console.log('DELETE error', error);
         });
@@ -85,6 +85,7 @@ function AdminPage() {
                             <Button 
                                 variant="contained"
                                 color="secondary"
+                                onClick={deleteEntry}
                             ><DeleteForeverIcon /></Button>
                         </TableCell>
                     </TableRow>

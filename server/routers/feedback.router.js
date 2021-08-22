@@ -18,11 +18,11 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     let newFeedback = req.body;
-    let sqlQuery =`
+    const sqlQuery =`
         INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
         VALUES ($1, $2, $3, $4);
     `;
-    let sqlParams = [
+    const sqlParams = [
         newFeedback.feeling,
         newFeedback.understanding,
         newFeedback.support,
@@ -37,18 +37,26 @@ router.post('/', (req, res) => {
         });
 });
 
-router.delete('/', (reg, res) => {
-    let sqlQuery=`
-    
+router.delete('/:id', (req, res) => {
+    const sqlQuery =`
+        DELETE FROM "feedback"
+        WHERE "id" = $1
     `;
-    pool.query(sqlQuery)
+    const sqlParams = [
+        req.params.id
+    ];
+    console.log('ID is', sqlParams);
+    
+    pool.query(sqlQuery, sqlParams)
         .then((result) => {
+            console.log('DELETEd entry');
             res.sendStatus(200);
         }).catch((error) => {
             console.log('DELETE error', error);
             res.sendStatus(500);
         });
 });
+
 
 
 module.exports = router;
