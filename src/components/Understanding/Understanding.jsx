@@ -10,6 +10,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import MoodIcon from '@material-ui/icons/Mood';
 import MoodBadIcon from '@material-ui/icons/MoodBad';
+import Typography from '@material-ui/core/Typography';
 
 function Understanding() {
     const dispatch = useDispatch();
@@ -37,7 +38,7 @@ function Understanding() {
 
     return (
         <>
-            <h2>How well are you understanding the content??</h2>
+            <Typography variant="h4">How well are you understanding the content??</Typography>
             <FormControl component="fieldset">
                     <RadioGroup row value={understandingScore} onChange={(event) => setUnderstandingScore(event.target.value)}>
                         <MoodIcon fontSize="large"/>
@@ -55,12 +56,14 @@ function Understanding() {
                 <Button
                     variant="contained"
                     color="primary"
+                    size="large"
                     onClick={onPrevButtonClick}
                 ><NavigateBeforeIcon />Prev
                 </Button>
                 <Button
                     variant="contained"
                     color="primary"
+                    size="large"
                     onClick={onNextButtonClick}
                 >Next<NavigateNextIcon />
                 </Button>

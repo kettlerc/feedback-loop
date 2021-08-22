@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 function FeedbackSubmitted() {
     const dispatch = useDispatch();
@@ -14,11 +15,12 @@ function FeedbackSubmitted() {
 
     return (
         <>
-        <h1>Thank you for your feedback!</h1>
+        <Typography variant="h2">Thank you for your feedback!</Typography>
         <Button 
             onClick={onButtonClick}
             variant="contained"
             color="primary"
+            size="large"
         >Leave New Feedback</Button>
         </>
     )

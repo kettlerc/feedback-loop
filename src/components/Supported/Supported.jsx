@@ -10,6 +10,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import MoodIcon from '@material-ui/icons/Mood';
 import MoodBadIcon from '@material-ui/icons/MoodBad';
+import Typography from '@material-ui/core/Typography';
 
 function Supported() {
     const dispatch = useDispatch();
@@ -37,7 +38,7 @@ function Supported() {
 
     return (
         <>
-            <h2>How well are you being supported?</h2>
+            <Typography variant="h4">How well are you being supported?</Typography>
             <FormControl component="fieldset">
                     <RadioGroup row value={supportedScore} onChange={(event) => setSupportedScore(event.target.value)}>
                         <MoodIcon fontSize="large"/>
@@ -55,12 +56,14 @@ function Supported() {
                 <Button
                     variant="contained"
                     color="primary"
+                    size="large"
                     onClick={onPrevButtonClick}
                 ><NavigateBeforeIcon />Prev
                 </Button>
                 <Button
                     variant="contained"
                     color="primary"
+                    size="large"
                     onClick={onNextButtonClick}
                 >Next<NavigateNextIcon />
                 </Button>

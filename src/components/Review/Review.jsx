@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import Typography from '@material-ui/core/Typography';
 
 function Review() {
     const history = useHistory();
@@ -46,21 +47,23 @@ function Review() {
 
     return (
         <>
-        <h2>Here is your feedback</h2>
-        <h3>Feelings: {feedback[0]}</h3>
-        <h3>Understanding: {feedback[1]}</h3>
-        <h3>Support: {feedback[2]}</h3>
-        <h3>Comments: {feedback[3]}</h3>
+        <Typography variant="h3">Here is your feedback</Typography>
+        <Typography variant="h4">Feelings: {feedback[0]}</Typography>
+        <Typography variant="h4">Understanding: {feedback[1]}</Typography>
+        <Typography variant="h4">Support: {feedback[2]}</Typography>
+        <Typography variant="h4">Comments: {feedback[3]}</Typography>
         <Button
             variant="contained"
             color="primary"
+            size="large"
             onClick={onPrevFromReview}
         ><NavigateBeforeIcon />Prev
         </Button>
-        <Button 
-            onClick={submitFeedback}
+        <Button
             variant="contained"
             color="primary"
+            size="large"
+            onClick={submitFeedback}
         >Submit Feedback<NavigateNextIcon /></Button>
         </>
     )

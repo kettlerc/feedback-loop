@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import TextField from '@material-ui/core/TextField';
-
+import Typography from '@material-ui/core/Typography';
 
 function Comments() {
     const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function Comments() {
 
     return (
         <>
-            <h2>Any comments you want to leave?</h2>
+            <Typography variant="h4">Any comments you want to leave?</Typography>
             <div>
                 <TextField 
                     onChange={(event) => setComments(event.target.value)}
@@ -42,12 +42,14 @@ function Comments() {
                     <Button
                         variant="contained"
                         color="primary"
+                        size="large"
                         onClick={onPrevButtonClick}
                     ><NavigateBeforeIcon />Prev
                     </Button>
                     <Button
                         variant="contained"
                         color="primary"
+                        size="large"
                         onClick={onNextButtonClick}
                     >Next<NavigateNextIcon />
                     </Button>

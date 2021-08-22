@@ -36,8 +36,9 @@
 [X] VALIDATION
 
 STRETCH
-[ ] go back and change scores
+[X] go back and change scores
 [ ] MaterialUI
+    [ ] typography
     [X] theme
     [X] radio buttons
     [X] input form

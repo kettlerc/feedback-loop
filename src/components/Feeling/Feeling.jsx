@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import MoodIcon from '@material-ui/icons/Mood';
 import MoodBadIcon from '@material-ui/icons/MoodBad';
+import Typography from '@material-ui/core/Typography';
 
 function Feeling() {
     const dispatch = useDispatch();
@@ -29,8 +30,7 @@ function Feeling() {
 
     return (
         <>
-            <h2>How are you feeling today?</h2>
-
+            <Typography variant="h4">How are you feeling today?</Typography>
             <FormControl component="fieldset">
                     <RadioGroup row value={feelingScore} onChange={(event) => setFeelingScore(event.target.value)}>
                         <MoodIcon fontSize="large"/>
@@ -48,6 +48,7 @@ function Feeling() {
                 <Button
                     variant="contained"
                     color="primary"
+                    size="large"
                     onClick={onButtonClick}
                 >Next<NavigateNextIcon />
                 </Button>
