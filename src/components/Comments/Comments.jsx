@@ -29,7 +29,7 @@ function Comments() {
             type: 'ADD_COMMENTS',
             payload: comments
         });
-        history.push('/review');
+        history.goBack();
     }
 
     const onPrevButtonClick = () => {

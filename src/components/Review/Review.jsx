@@ -53,7 +53,7 @@ function Review() {
         dispatch({
             type: 'GO_BACK'
         });
-        history.push('/comments')
+        history.goBack();
     }
 
     return (

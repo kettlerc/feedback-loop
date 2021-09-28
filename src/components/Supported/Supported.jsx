@@ -48,7 +48,7 @@ function Supported() {
         dispatch({
             type: 'GO_BACK'
         });
-        history.push('/understanding')
+        history.goBack();
     }
 
     return (

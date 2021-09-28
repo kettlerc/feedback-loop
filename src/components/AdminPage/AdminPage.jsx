@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from 'react';
+import { useSelector } from "react-redux";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -18,6 +19,7 @@ function AdminPage() {
     const [feedbackList, setFeedbackList] = useState([]);
     const [flagged, setFlagged] = useState(true);
     const classes = useStyles();
+    const feedback = useSelector(store => store.totalFeedback)
 
     useEffect(() => {
         fetchFeedback();
@@ -36,10 +38,10 @@ function AdminPage() {
     }
 
     const deleteEntry = (id) => {
-        console.log('ID is', id);
+        console.log('ID is', feedback.id);
         axios({
             method: 'DELETE',
-            url: `/feedback/${id}`
+            url: `/feedback/${feedback.id}`
         }).then((response) => {
             console.log('DELETEd entry');
         }).catch((error) => {

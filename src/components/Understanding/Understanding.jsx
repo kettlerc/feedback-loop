@@ -48,7 +48,7 @@ function Understanding() {
         dispatch({
             type: 'RESET_FEEDBACK'
         });
-        history.push('/')
+        history.goBack();
     }
 
     return (
