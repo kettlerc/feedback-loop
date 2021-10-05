@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from 'react';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -20,6 +20,7 @@ function AdminPage() {
     const [flagged, setFlagged] = useState(true);
     const classes = useStyles();
     const feedback = useSelector(store => store.totalFeedback)
+    const dispatch = useDispatch();
 
     useEffect(() => {
         fetchFeedback();
@@ -32,21 +33,21 @@ function AdminPage() {
         }).then((response) => {
             setFeedbackList(response.data);
             console.log(response.data);
+            console.log('id might be', feedbackList.id);
         }).catch((error) => {
             console.log('GET error', error);
         });
     }
 
+
     const deleteEntry = (id) => {
         console.log('ID is', feedback.id);
-        axios({
-            method: 'DELETE',
-            url: `/feedback/${feedback.id}`
-        }).then((response) => {
+        axios(axios.delete(`/feedback/${feedback.id}`, {params: {id: feedback.id}})
+        .then((response) => {
             console.log('DELETEd entry');
         }).catch((error) => {
             console.log('DELETE error', error);
-        });
+        }));
     }
 
     const toggleFlagClick = () => {

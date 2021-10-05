@@ -8,6 +8,7 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import FeedbackSubmitted from '../FeedbackSubmitted/FeedbackSubmitted';
 import AdminPage from '../AdminPage/AdminPage';
+import Footer from '../Footer/Footer';
 
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
         <Route path="/adminpage">
           <AdminPage />
         </Route>
+
+        <Footer />
       </Router>
     </div>
   );

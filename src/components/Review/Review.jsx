@@ -59,29 +59,31 @@ function Review() {
     return (
         <>
         <Typography variant="h3">Here is your feedback</Typography>
-        <div className={classes.textDiv}>
-            <Typography variant="h5">Feelings: {feedback[0]}</Typography>
-            <Typography variant="h5">Understanding: {feedback[1]}</Typography>
-            <Typography variant="h5">Support: {feedback[2]}</Typography>
-            <Typography variant="h5">Comments: {feedback[3]}</Typography>
+        <div>
+            <div className={classes.textDiv}>
+                <Typography variant="h5">Feelings: {feedback[0]}</Typography>
+                <Typography variant="h5">Understanding: {feedback[1]}</Typography>
+                <Typography variant="h5">Support: {feedback[2]}</Typography>
+                <Typography variant="h5">Comments: {feedback[3]}</Typography>
+            </div>
+            <Button
+                className={classes.button}
+                variant="contained"
+                color="primary"
+                size="large"
+                startIcon={<NavigateBeforeIcon />}
+                onClick={onPrevFromReview}
+            >Prev
+            </Button>
+            <Button
+                className={classes.button}
+                variant="contained"
+                color="primary"
+                size="large"
+                endIcon={<SendIcon />}
+                onClick={submitFeedback}
+            >Submit Feedback</Button>
         </div>
-        <Button
-            className={classes.button}
-            variant="contained"
-            color="primary"
-            size="large"
-            startIcon={<NavigateBeforeIcon />}
-            onClick={onPrevFromReview}
-        >Prev
-        </Button>
-        <Button
-            className={classes.button}
-            variant="contained"
-            color="primary"
-            size="large"
-            endIcon={<SendIcon />}
-            onClick={submitFeedback}
-        >Submit Feedback</Button>
         </>
     )
 }
